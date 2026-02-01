@@ -6,6 +6,49 @@ html, body, #terminal {
     margin: 0%;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#terminal {
+    flex: 1;
+    height: auto;
+}
+
+.gotty-toolbar {
+    display: none;
+    flex-wrap: wrap;
+    background: #333;
+    padding: 2px;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+@media (max-width: 1024px) {
+    .gotty-toolbar {
+        display: flex;
+    }
+}
+
+.gotty-toolbar-btn {
+    flex: 1 1 auto;
+    margin: 1px;
+    padding: 8px 4px;
+    background: #555;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.gotty-toolbar-btn.active {
+    background: #007bff;
+}
+
 .progress .progress-bar {
   transition: unset;
   transition-duration: 0.1s;
