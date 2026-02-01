@@ -17,12 +17,18 @@ body {
 }
 
 .gotty-toolbar {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     background: #333;
     padding: 2px;
     box-sizing: border-box;
     z-index: 100;
+}
+
+@media (max-width: 1024px) {
+    .gotty-toolbar {
+        display: flex;
+    }
 }
 
 .gotty-toolbar-btn {

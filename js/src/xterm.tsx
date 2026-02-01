@@ -61,7 +61,7 @@ export class GoTTYXterm {
     };
 
     createToolbar() {
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 0);
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 0 && window.innerWidth < 1024);
         if (!isMobile) return;
 
         const toolbar = document.createElement("div");
@@ -107,7 +107,7 @@ export class GoTTYXterm {
             toolbar.appendChild(button);
         });
 
-        this.elem.parentNode?.insertBefore(toolbar, this.elem);
+        this.elem.parentNode?.appendChild(toolbar);
     }
 
     updateToolbarUI(toolbar: HTMLElement) {
